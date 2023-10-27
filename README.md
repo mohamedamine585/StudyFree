@@ -1,7 +1,6 @@
 # careerark
 
-A new Flutter project.
-
+CareerArk is a Flutter mobile application devloped by Talentship Global advisory Forum Flutter team to provide indian students with a variety of study material (courses , exams , tests ... ).
 ## Getting Started
 
 This project is a starting point for a Flutter application.
