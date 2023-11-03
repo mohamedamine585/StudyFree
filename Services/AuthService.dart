@@ -4,5 +4,4 @@ class Authservice {
   /*Future<Student>*/ GoogleSignin() async {}
   /*Future<Student>*/ GoogleSignup() async {}
   /*Future<Student>*/ Signout() async {}
-  /*Future<Student>*/
 }
