@@ -1,3 +1,4 @@
+import 'package:careerark/Presentation/utils/Theme.dart';
 import 'package:careerark/Presentation/utils/consts.dart';
 import 'package:flutter/material.dart';
 
@@ -15,14 +16,9 @@ class _SignupbuttonState extends State<Signupbutton> {
       width: Screenwidth * 0.45,
       height: Screenlength * 0.07,
       child: TextButton(
-          style: ButtonStyle(
-              backgroundColor: MaterialStateColor.resolveWith(
-                  (states) => Color.fromARGB(255, 116, 232, 120))),
+          style: myTheme.textButtonTheme.style,
           onPressed: () {},
-          child: const Text(
-            "Sign up",
-            style: TextStyle(color: Colors.white, fontSize: 20),
-          )),
+          child: Text("Sign up", style: myTheme.textTheme.bodyText2)),
     );
   }
 }
