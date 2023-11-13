@@ -1,3 +1,4 @@
+import 'package:careerark/Presentation/utils/Theme.dart';
 import 'package:flutter/material.dart';
 
 class Signupcheckbox extends StatefulWidget {
@@ -18,11 +19,6 @@ class _SignupcheckboxState extends State<Signupcheckbox> {
             is_checked = value!;
           });
         },
-        fillColor: MaterialStateColor.resolveWith((states) {
-          if (states.isEmpty) {
-            return Colors.white;
-          }
-          return const Color.fromARGB(255, 71, 240, 77);
-        }));
+        fillColor: myTheme.checkboxTheme.fillColor);
   }
 }

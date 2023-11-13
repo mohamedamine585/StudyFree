@@ -1,6 +1,6 @@
 import 'package:careerark/Presentation/utils/Theme.dart';
+import 'package:careerark/Presentation/utils/consts.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class GoogleSignupButton extends StatelessWidget {
   @override
@@ -9,17 +9,16 @@ class GoogleSignupButton extends StatelessWidget {
       onPressed: () {
         print('Sign up with Google pressed');
       },
-      icon: SvgPicture.asset(
-        'assets/google_icon.svg',
-        height: 24.0,
-        width: 24.0,
+      icon: Image.asset(
+        "assets/google_icon.png",
+        width: Screenwidth * 0.1,
       ),
       label: Text(
         'Sign up with Google',
-        style: myTheme.textTheme.bodyText1,
+        style: myTheme.textTheme.headline4,
       ),
       style: ElevatedButton.styleFrom(
-        primary: Colors.red, // Change the button color as needed
+        primary: Colors.white, // Change the button color as needed
       ),
     );
   }
