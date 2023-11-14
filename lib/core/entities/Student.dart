@@ -1,21 +1,18 @@
 class Student {
   String id;
-  String firstname;
-  String lastname;
+  String name;
   String email;
   DateTime? lastconnection;
   String? school;
   String? grade;
-  DateTime birthday;
+  DateTime? birthday;
   bool? is_email_verified;
   String? city;
   String? photo_url;
   Student(
       {required this.id,
-      required this.firstname,
-      required this.lastname,
       required this.email,
-      required this.birthday,
+      required this.name,
       this.is_email_verified,
       this.photo_url,
       this.city,
@@ -23,19 +20,16 @@ class Student {
       this.grade,
       this.lastconnection});
   factory Student.create({
-    required String firstname,
-    required String lastname,
+    required String name,
     required String email,
-    required DateTime birthday,
     String? city,
     String? school,
     String? grade,
   }) {
     return Student(
-        id: "",
-        firstname: firstname,
-        lastname: lastname,
-        email: email,
-        birthday: birthday);
+      id: "",
+      name: name,
+      email: email,
+    );
   }
 }
