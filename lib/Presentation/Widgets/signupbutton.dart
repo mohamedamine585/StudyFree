@@ -34,6 +34,7 @@ class _SignupbuttonState extends State<Signupbutton> {
                   context: context,
                   builder: (context) =>
                       InputErrorDialog(message: "Invalid phone number"));
+            } else if (Firstname.text == "" || Lastname.text == "") {
             } else {}
           },
           child: Text("Sign up", style: myTheme.textTheme.bodyText2)),

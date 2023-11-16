@@ -1,3 +1,4 @@
+import 'package:careerark/Presentation/Pages/TermsandconditionsPage.dart';
 import 'package:careerark/Presentation/Widgets/GoogleSignupbutton.dart';
 import 'package:careerark/Presentation/Widgets/emailtextfield.dart';
 import 'package:careerark/Presentation/Widgets/numbertextfield.dart';
@@ -20,7 +21,8 @@ class _SignuppageState extends State<Signuppage> {
 
   @override
   void initState() {
-    nameC = TextEditingController();
+    Firstname = TextEditingController();
+    Lastname = TextEditingController();
     passwordC = TextEditingController();
     super.initState();
   }
@@ -50,7 +52,7 @@ class _SignuppageState extends State<Signuppage> {
             Padding(
               padding: EdgeInsets.only(right: Screenwidth * 0.5),
               child: Container(
-                child: Text("Name", style: myTheme.textTheme.bodyText1),
+                child: Text("First name", style: myTheme.textTheme.bodyText1),
                 width: Screenwidth * 0.25,
               ),
             ),
@@ -62,7 +64,38 @@ class _SignuppageState extends State<Signuppage> {
               child: Container(
                 height: Screenlength * 0.09,
                 child: TextField(
-                    controller: nameC,
+                    controller: Firstname,
+                    decoration: InputDecoration(
+                        focusedBorder: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.black)),
+                        filled: true,
+                        fillColor: Color.fromARGB(255, 244, 243, 239),
+                        hintText: "EX:- Nayana",
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(7)),
+                        ))),
+                width: Screenwidth * 0.9,
+              ),
+            ),
+            SizedBox(
+              height: Screenlength * 0.02,
+            ),
+            Padding(
+              padding: EdgeInsets.only(right: Screenwidth * 0.5),
+              child: Container(
+                child: Text("Lastname", style: myTheme.textTheme.bodyText1),
+                width: Screenwidth * 0.25,
+              ),
+            ),
+            SizedBox(
+              height: Screenlength * 0.02,
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: Screenwidth * 0.05),
+              child: Container(
+                height: Screenlength * 0.09,
+                child: TextField(
+                    controller: Lastname,
                     decoration: InputDecoration(
                         focusedBorder: OutlineInputBorder(
                             borderSide: BorderSide(color: Colors.black)),
@@ -157,7 +190,9 @@ class _SignuppageState extends State<Signuppage> {
                       ),
                       GestureDetector(
                         onTap: () {
-                          print("terms and condtions");
+                          showDialog(
+                              context: context,
+                              builder: (context) => const TermsAndConditions());
                         },
                         child: Text(
                           "terms and condtions",

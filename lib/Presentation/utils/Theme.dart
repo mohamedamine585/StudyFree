@@ -16,6 +16,9 @@ final ThemeData myTheme = ThemeData(
         fontWeight: FontWeight.bold,
       ),
       bodyText1: GoogleFonts.lexend(),
+      headline1: GoogleFonts.lexend(fontSize: 15, color: Colors.black),
+      headline2: GoogleFonts.lexend(
+          fontWeight: FontWeight.bold, fontSize: 23, color: Colors.black),
       headline4: GoogleFonts.lexend(),
       headline5: GoogleFonts.lexend(color: Color.fromARGB(255, 83, 215, 87)),
       bodyText2: GoogleFonts.lexend(
