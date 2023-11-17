@@ -11,9 +11,11 @@ class TermsAndConditions extends StatelessWidget {
       appBar: AppBar(
         iconTheme: const IconThemeData(color: Colors.black),
         backgroundColor: Colors.white,
-        title: Text(
-          "Terms and conditions",
-          style: myTheme.textTheme.headline3,
+        title: SafeArea(
+          child: Text(
+            "Terms and conditions",
+            style: myTheme.textTheme.headline3,
+          ),
         ),
       ),
       body: SingleChildScrollView(

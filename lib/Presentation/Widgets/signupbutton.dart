@@ -1,5 +1,4 @@
 import 'package:careerark/Presentation/Dialogs/InputerrorDialog.dart';
-import 'package:careerark/Presentation/Widgets/emailtextfield.dart';
 import 'package:careerark/Presentation/utils/Theme.dart';
 import 'package:careerark/Presentation/utils/consts.dart';
 import 'package:careerark/Presentation/utils/global.dart';
@@ -34,8 +33,22 @@ class _SignupbuttonState extends State<Signupbutton> {
                   context: context,
                   builder: (context) =>
                       InputErrorDialog(message: "Invalid phone number"));
-            } else if (Firstname.text == "" || Lastname.text == "") {
-            } else {}
+            } else if (passwordC.text.length < 6) {
+              showDialog(
+                  context: context,
+                  builder: (context) =>
+                      InputErrorDialog(message: "Invalid Password"));
+            } else if (Firstname.text.length < 6 || Lastname.text.length < 6) {
+              showDialog(
+                  context: context,
+                  builder: (context) => InputErrorDialog(
+                      message: "Invalid Firstname or Lastname"));
+            } else if (!terms_accepted) {
+              showDialog(
+                  context: context,
+                  builder: (context) => InputErrorDialog(
+                      message: "You shloud agree on the terms and conditions"));
+            }
           },
           child: Text("Sign up", style: myTheme.textTheme.bodyText2)),
     );

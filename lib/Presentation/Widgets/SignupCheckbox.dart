@@ -1,4 +1,5 @@
 import 'package:careerark/Presentation/utils/Theme.dart';
+import 'package:careerark/Presentation/utils/global.dart';
 import 'package:flutter/material.dart';
 
 class Signupcheckbox extends StatefulWidget {
@@ -10,13 +11,12 @@ class Signupcheckbox extends StatefulWidget {
 
 class _SignupcheckboxState extends State<Signupcheckbox> {
   @override
-  bool is_checked = false;
   Widget build(BuildContext context) {
     return Checkbox(
-        value: is_checked,
+        value: terms_accepted,
         onChanged: (value) {
           setState(() {
-            is_checked = value!;
+            terms_accepted = value!;
           });
         },
         fillColor: myTheme.checkboxTheme.fillColor);

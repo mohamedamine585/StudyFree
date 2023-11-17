@@ -18,6 +18,9 @@ class Signuppage extends StatefulWidget {
 
 class _SignuppageState extends State<Signuppage> {
   bool is_checked = false;
+  Color firstnameborderc = Colors.grey,
+      lastnameborderc = Colors.grey,
+      passwordborderc = Colors.grey;
 
   @override
   void initState() {
@@ -29,6 +32,39 @@ class _SignuppageState extends State<Signuppage> {
 
   @override
   Widget build(BuildContext context) {
+    passwordC.addListener(() {
+      if (passwordC.text.length < 6) {
+        setState(() {
+          passwordborderc = Colors.red;
+        });
+      } else {
+        setState(() {
+          passwordborderc = Colors.black;
+        });
+      }
+    });
+    Firstname.addListener(() {
+      if (Firstname.text.length < 6) {
+        setState(() {
+          firstnameborderc = Colors.red;
+        });
+      } else {
+        setState(() {
+          firstnameborderc = Colors.black;
+        });
+      }
+    });
+    Lastname.addListener(() {
+      if (Lastname.text.length < 6) {
+        setState(() {
+          lastnameborderc = Colors.red;
+        });
+      } else {
+        setState(() {
+          lastnameborderc = Colors.black;
+        });
+      }
+    });
     Screenwidth = MediaQuery.of(context).size.width;
     Screenlength = MediaQuery.of(context).size.height;
     return Scaffold(
@@ -36,11 +72,13 @@ class _SignuppageState extends State<Signuppage> {
       appBar: AppBar(
           elevation: 0,
           backgroundColor: Colors.white,
-          title: Padding(
-            padding: EdgeInsets.only(left: Screenwidth * 0.25),
-            child: Text(
-              "Sign up",
-              style: myTheme.textTheme.headline6,
+          title: SafeArea(
+            child: Padding(
+              padding: EdgeInsets.only(left: Screenwidth * 0.25),
+              child: Text(
+                "Sign up",
+                style: myTheme.textTheme.headline6,
+              ),
             ),
           )),
       body: SingleChildScrollView(
@@ -67,10 +105,10 @@ class _SignuppageState extends State<Signuppage> {
                     controller: Firstname,
                     decoration: InputDecoration(
                         focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.black)),
+                            borderSide: BorderSide(color: firstnameborderc)),
                         filled: true,
                         fillColor: Color.fromARGB(255, 244, 243, 239),
-                        hintText: "EX:- Nayana",
+                        hintText: "EX:- Patre",
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.all(Radius.circular(7)),
                         ))),
@@ -98,7 +136,7 @@ class _SignuppageState extends State<Signuppage> {
                     controller: Lastname,
                     decoration: InputDecoration(
                         focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.black)),
+                            borderSide: BorderSide(color: lastnameborderc)),
                         filled: true,
                         fillColor: Color.fromARGB(255, 244, 243, 239),
                         hintText: "EX:- Nayana",
@@ -158,7 +196,7 @@ class _SignuppageState extends State<Signuppage> {
                     obscureText: true,
                     decoration: InputDecoration(
                         focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.black)),
+                            borderSide: BorderSide(color: passwordborderc)),
                         filled: true,
                         fillColor: Color.fromARGB(255, 244, 243, 239),
                         hintText: "Your Password",
